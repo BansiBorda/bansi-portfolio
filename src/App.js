@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { PortfolioProvider } from './context/PortfolioContext';
+import Header from './components/Header';
+import Projects from './components/project/Projects';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <PortfolioProvider>
+      <div className="min-h-screen bg-gray-100">
+        <Header />
+        <Projects />
+      </div>
+    </PortfolioProvider>
   );
-}
+};
 
 export default App;
