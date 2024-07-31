@@ -1,17 +1,18 @@
 import React from 'react';
-import { PortfolioProvider } from './context/PortfolioContext';
-import Header from './components/Header';
-import Projects from './components/project/Projects';
+import { ThemeProvider } from './context/ThemeContext';
+import Sidebar from './Sidebar';
+import HeroSection from './components/hero/HeroSection';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <PortfolioProvider>
-      <div className="min-h-screen bg-gray-100">
-        <Header />
-        <Projects />
+    <ThemeProvider>
+      <div id="app">
+        <Sidebar />
+        <HeroSection />
       </div>
-    </PortfolioProvider>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

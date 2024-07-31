@@ -1,18 +1,26 @@
-import React, { useContext } from 'react';
-import PortfolioContext from '../../context/PortfolioContext';
-import Project from './Project';
+import React from 'react';
+import './index.css';
 
 const Projects = () => {
-  const { portfolio } = useContext(PortfolioContext);
+  const projects = [
+    { title: 'Codequests', description: 'Vue.js, Vite PWA, Firebase' },
+    { title: 'Wanderlust Nomad', description: 'Vue.js, Vite' },
+    { title: 'Kittens World website', description: 'Vue.js, Tailwind' },
+    { title: 'Space Tourism', description: 'Vue.js, Vite' },
+  ];
+
   return (
-    <div className="p-4">
-      <h2 className="text-3xl font-bold mb-4">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {portfolio.projects.map((project, index) => (
-          <Project key={index} {...project} />
+    <section className="projects-section">
+      <h2>Projects</h2>
+      <div className="projects-container">
+        {projects.map((project, index) => (
+          <div className="project-card" key={index}>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
